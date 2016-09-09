@@ -1,7 +1,7 @@
 /*global cordova,window,console*/
 /**
  * An Image Picker plugin for Cordova
- * 
+ *
  * Developed by Wymsee for Sync OnSet
  */
 
@@ -13,7 +13,7 @@ var ImagePicker = function() {
 *	success - success callback
 *	fail - error callback
 *	options
-*		.maximumImagesCount - max images to be selected, defaults to 15. If this is set to 1, 
+*		.maximumImagesCount - max images to be selected, defaults to 15. If this is set to 1,
 *		                      upon selection of a single image, the plugin will return it.
 *		.width - width to resize image to (if one of height/width is 0, will resize to fit the
 *		         other while keeping aspect ratio, if both height and width are 0, the full size
@@ -25,12 +25,16 @@ ImagePicker.prototype.getPictures = function(success, fail, options) {
 	if (!options) {
 		options = {};
 	}
-	
+
 	var params = {
 		maximumImagesCount: options.maximumImagesCount ? options.maximumImagesCount : 15,
 		width: options.width ? options.width : 0,
 		height: options.height ? options.height : 0,
-		quality: options.quality ? options.quality : 100
+		quality: options.quality ? options.quality : 100,
+        processing_images_header: options.processing_images_header ? options.processing_images_header : "",
+		processing_images_message: options.processing_images_message? options.processing_images_message: "",
+		maximum_selection_count_error_header: options.maximum_selection_count_error_header? options.maximum_selection_count_error_header: "",
+		maximum_selection_count_error_message: options.maximum_selection_count_error_message? options.maximum_selection_count_error_message: "",
 	};
 
 	return cordova.exec(success, fail, "ImagePicker", "getPictures", [params]);
