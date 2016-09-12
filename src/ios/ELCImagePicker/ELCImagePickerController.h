@@ -34,7 +34,8 @@
 
 @property (nonatomic, weak) id<ELCImagePickerControllerDelegate> imagePickerDelegate;
 @property (nonatomic, assign) NSInteger maximumImagesCount;
-
+@property (nonatomic, strong) NSString *maximum_selection_count_error_header;
+@property (nonatomic, strong) NSString *maximum_selection_count_error_message;
 /**
  * YES if the picker should return the original image,
  * or NO for an image suitable for displaying full screen on the device.

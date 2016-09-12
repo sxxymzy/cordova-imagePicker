@@ -107,7 +107,7 @@
                                                       animated:NO];
             }
             
-            [self.navigationItem setTitle:self.singleSelection ? @"Pick Photo" : @"Pick Photos"];
+            [self.navigationItem setTitle:self.singleSelection ? self.ios_table_title : self.ios_table_title];
         });
     }
 }
