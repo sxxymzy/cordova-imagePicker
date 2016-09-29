@@ -35,6 +35,8 @@ ImagePicker.prototype.getPictures = function(success, fail, options) {
 		processing_images_message: options.processing_images_message? options.processing_images_message: "",
 		maximum_selection_count_error_header: options.maximum_selection_count_error_header? options.maximum_selection_count_error_header: "",
 		maximum_selection_count_error_message: options.maximum_selection_count_error_message? options.maximum_selection_count_error_message: "",
+		ios_album_title: options.ios_album_title? options.ios_album_title: "",
+		ios_table_title: options.ios_table_title? options.ios_table_title: ""
 	};
 
 	return cordova.exec(success, fail, "ImagePicker", "getPictures", [params]);
